@@ -35,7 +35,9 @@ const filtrarClientes = (
   lista: { nome: string; idade: number; status: boolean }[],
   nome: string
 ): any[] => {
-  let resultado = lista.filter((cliente) => cliente.nome.includes(`${nome}`));
+  const resultado = lista.filter((cliente) =>
+    cliente.nome.toLowerCase().includes(`${nome.toLowerCase()}`)
+  );
   return resultado;
 };
 
