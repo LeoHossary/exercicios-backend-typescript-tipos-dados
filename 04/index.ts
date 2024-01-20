@@ -3,12 +3,12 @@ const imprimirEtiquetas = (produto: {
   lote: number;
   ano: number;
   qtd: number;
-}): string => {
-  let resultado: string = "";
+}): string[] => {
+  let resultado: string[] = [];
   for (let i = 1; i <= produto.qtd; i++) {
-    resultado += `${produto.lote}-${produto.ano}-${i
-      .toString()
-      .padStart(3, "0")} \n`;
+    resultado.push(
+      `${produto.lote}-${produto.ano}-${i.toString().padStart(3, "0")}`
+    );
   }
 
   return resultado;
